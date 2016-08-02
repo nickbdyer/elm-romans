@@ -12,6 +12,8 @@ tests =
         , test "Converts 1" 
           <| assertEqual "I" (Romans.convert 1)
 
+        , test "Converts 5"
+          <| assertEqual "V" (Romans.convert 5)
 
         ]
 
