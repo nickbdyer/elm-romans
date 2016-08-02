@@ -7,46 +7,22 @@ tests =
     suite "Roman Numerals Test"
         [ test 
           "Converts 0" 
-          <| assertRomans "" 0
+          <| assertEqual "" (Romans.convert 0)
+        
+        , test
+          "Converts 1"
+          <| assertEqual "I" (Romans.convert 1)
 
-        , test 
-          "Converts 1" 
-          <| assertRomans "I" 1
-
-        , test 
-          "Converts 5"
-          <| assertRomans "V" 5
-
-        , test 
-          "Converts 10"
-          <| assertRomans "X" 10
-
-        , test 
-          "Converts 4"
-          <| assertRomans "IV" 4
-
-        , test 
-          "Converts 9"
-          <| assertRomans "IX" 9
-
-        , test 
+        , test
           "Converts 2"
-          <| assertRomans "II" 2
+          <| assertEqual "II" (Romans.convert 2)
 
-        , test 
-          "Converts 2"
-          <| assertRomans "II" 2
-
-        , test 
-          "Converts 28"
-          <| assertRomans "XXVIII" 28
+        , test
+          "Converts 3"
+          <| assertEqual "III" (Romans.convert 3)
         ]
-
-assertRomans : String -> Int -> Assertion
-assertRomans roman arabic =
-  assertEqual roman (Romans.convert arabic)
 
 
 main : Program Never
 main =
-    runSuiteHtml tests
+    runSuite tests
