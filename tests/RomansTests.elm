@@ -5,8 +5,16 @@ import ElmTest exposing (..)
 
 tests =
     suite "Roman Numerals Test"
-        [ test "converts0" (assertEqual "" (Romans.convert 0))
+        [ 
+          test "Converts 0" 
+          <| assertEqual "" (Romans.convert 0)
+
+        , test "Converts 1" 
+          <| assertEqual "I" (Romans.convert 1)
+
+
         ]
+
 
 main : Program Never
 main =
