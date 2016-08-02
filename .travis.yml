@@ -6,5 +6,5 @@ cache:
   directories:
     - elm-stuff/build-artifacts
 before_script: 
-  - elm-make --yes --output test.js tests/Tests.elm
+  - elm-make --yes --output test.js tests/RomansTests.elm
 script: node test.js
