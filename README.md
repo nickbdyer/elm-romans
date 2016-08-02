@@ -9,6 +9,22 @@ familiarise myself with the syntax of Elm.
 
 ### Clone the Repo
 
+```
+$ git clone git@github.com:nickbdyer/elm-romans.git
+```
+
 ### Install Packages
 
+Install [Elm](http://elm-lang.org/).
+
+```
+$ cd elm-koans
+
+$ elm-package install
+```
+
 ### Run Tests
+
+```
+$ elm-make --yes --output test.js tests/Tests.elm; node test.js
+```
