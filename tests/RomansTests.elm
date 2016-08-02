@@ -7,17 +7,30 @@ tests =
     suite "Roman Numerals Test"
         [ 
           test "Converts 0" 
-          <| assertEqual "" (Romans.convert 0)
+          <| assertRomans "" 0
 
         , test "Converts 1" 
-          <| assertEqual "I" (Romans.convert 1)
+          <| assertRomans "I" 1
 
         , test "Converts 5"
-          <| assertEqual "V" (Romans.convert 5)
+          <| assertRomans "V" 5
 
         , test "Converts 10"
-          <| assertEqual "X" (Romans.convert 10)
+          <| assertRomans "X" 10
+
+        , test "Converts 4"
+          <| assertRomans "IV" 4
+
+        , test "Converts 9"
+          <| assertRomans "IX" 9
+
+        , test "Converts 2"
+          <| assertRomans "II" 2
         ]
+
+assertRomans : String -> Int -> Assertion
+assertRomans roman arabic =
+  assertEqual roman (Romans.convert arabic)
 
 
 main : Program Never
