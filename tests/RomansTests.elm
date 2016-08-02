@@ -26,6 +26,12 @@ tests =
 
         , test "Converts 2"
           <| assertRomans "II" 2
+
+        , test "Converts 2"
+          <| assertRomans "II" 2
+
+        , test "Converts 28"
+          <| assertRomans "XXVIII" 28
         ]
 
 assertRomans : String -> Int -> Assertion
