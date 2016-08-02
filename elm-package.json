@@ -4,7 +4,8 @@
     "repository": "https://github.com/nickbdyer/elm-romans.git",
     "license": "MIT",
     "source-directories": [
-        "."
+        "src",
+        "tests"
     ],
     "exposed-modules": [],
     "dependencies": {
