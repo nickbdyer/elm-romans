@@ -15,10 +15,6 @@ convertRecursive : Int -> String -> String
 convertRecursive arabic roman =
   if arabic == 0 then
     roman
-  else if arabic >= 10 then
-    convertRecursive (arabic - 10) (roman ++ "X")
-  else if arabic >= 5 then
-    convertRecursive (arabic - 5) (roman ++ "V")
   else
     convertRecursive (arabic - (getHighestFactor arabic)) (roman ++ (Maybe.withDefault "" (get (getHighestFactor arabic) conversions)))
 
