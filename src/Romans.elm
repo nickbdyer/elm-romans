@@ -16,7 +16,10 @@ convertRecursive arabic roman =
   if arabic == 0 then
     roman
   else
-    convertRecursive (arabic - (getHighestFactor arabic)) (roman ++ (Maybe.withDefault "" (get (getHighestFactor arabic) conversions)))
+    let 
+      nextRomanAsArabic = getHighestFactor arabic
+    in
+      convertRecursive (arabic - (nextRomanAsArabic)) (roman ++ (Maybe.withDefault "" (get (nextRomanAsArabic) conversions)))
 
 getHighestFactor : Int -> Int
 getHighestFactor num =
