@@ -18,8 +18,11 @@ convertRecursive arabic roman =
   else
     let 
       nextRomanAsArabic = getHighestFactor arabic
+
+      letter = Maybe.withDefault "" 
+        <| (get (nextRomanAsArabic) conversions)
     in
-      convertRecursive (arabic - (nextRomanAsArabic)) (roman ++ (Maybe.withDefault "" (get (nextRomanAsArabic) conversions)))
+      convertRecursive (arabic - (nextRomanAsArabic)) (roman ++ letter)
 
 getHighestFactor : Int -> Int
 getHighestFactor num =
