@@ -1,7 +1,10 @@
 module Romans exposing (convert)
 
-import String exposing(repeat)
+import String exposing (repeat)
+import Dict exposing (fromList)
 
+conversions = 
+  Dict.fromList [(10, "X"), (5, "V"), (1, "I")]
 
 convert : Int -> String
 convert num =
@@ -10,9 +13,11 @@ convert num =
 
 convertRecursive : Int -> String -> String
 convertRecursive arabic roman =
-  if arabic >= 10 then
+  if arabic == 0 then
+    roman
+  else if arabic >= 10 then
     convertRecursive (arabic - 10) (roman ++ "X")
   else if arabic >= 5 then
     convertRecursive (arabic - 5) (roman ++ "V")
   else
-    roman ++ (repeat arabic "I")
+    convertRecursive (arabic - 1) (roman ++ "I")
