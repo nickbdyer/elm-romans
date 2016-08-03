@@ -20,6 +20,14 @@ tests =
         , test
           "Converts 3"
           <| assertEqual "III" (Romans.convert 3)
+
+        , test
+          "Converts 5"
+          <| assertEqual "V" (Romans.convert 5)
+
+        , test
+          "Converts 6"
+          <| assertEqual "VI" (Romans.convert 6)
         ]
 
 
